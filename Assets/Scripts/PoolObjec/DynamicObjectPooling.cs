@@ -1,25 +1,28 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class StaticObjectPooling<T> : MonoBehaviour where T : PoolObject
+public class DynamicObjectPooling<T> : MonoBehaviour where T : PoolObject
 {
     [Header("Pool Settings")]
     [SerializeField] private T prefab;
-    [SerializeField] private int initialSize = 10;
+    [SerializeField] private int initialSize = 5;
 
     private readonly List<T> pool = new List<T>();
 
     private void Awake()
     {
         for (int i = 0; i < initialSize; i++)
-        {
-            T obj = Instantiate(prefab, transform);
-            obj.OnDeactivate();
-            pool.Add(obj);
-        }
+            AddObjectToPool();
     }
 
-    
+    private T AddObjectToPool()
+    {
+        T obj = Instantiate(prefab, transform);
+        obj.OnDeactivate();
+        pool.Add(obj);
+        return obj;
+    }
+
     public T GetObject()
     {
         int count = pool.Count;
@@ -32,20 +35,17 @@ public class StaticObjectPooling<T> : MonoBehaviour where T : PoolObject
                 return obj;
             }
         }
-        Debug.Log("No hay objetos inactivos disponibles en el grupo estático.");
-        return null;
+        T newObj = AddObjectToPool();
+        newObj.OnActivate();
+        return newObj;
     }
 
     
     public void ReturnObject(T obj)
     {
         if (pool.Contains(obj))
-        {
             obj.OnDeactivate();
-
-        }
         else
-            Debug.Log("Se intentó devolver un objeto que no es de este grupo.");
+            Debug.LogWarning("Se intentó devolver un objeto que no es de este grupo.");
     }
 }
-
