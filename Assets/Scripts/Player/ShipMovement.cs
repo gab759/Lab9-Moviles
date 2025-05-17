@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ public class ShipMovement : MonoBehaviour
     private Rigidbody rb;
     private bool isGrounded;
     private float horizontalInput;
-
+    public static event Action Muerte;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -55,7 +56,16 @@ public class ShipMovement : MonoBehaviour
             isGrounded = false;
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Lava"))
+        {
+            jumpForce = 0;
+            Muerte?.Invoke();
 
+
+        }
+    }
     private void Jump()
     {
         Vector3 v = rb.linearVelocity;

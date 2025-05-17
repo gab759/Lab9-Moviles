@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlatformManager : MonoBehaviour
 {
     [Header("Referencias")]
-    [SerializeField] private PlatformPool pool;       // Arrastra el PlatformPool aquí
-    [SerializeField] private Transform player;        // El transform de tu cubito
+    [SerializeField] private PlatformPool pool;       
+    [SerializeField] private Transform player;        
 
     [Header("Configuración de generación")]
     [SerializeField] private int initialPlatforms = 10;
@@ -14,7 +14,7 @@ public class PlatformManager : MonoBehaviour
     [SerializeField] private float horizontalRange = 3f;
     [SerializeField] private float despawnBelowPlayerBy = 5f;
 
-    private float highestY;                            // Altura de la última plataforma generada
+    private float highestY;                           
     private readonly List<Platform> activePlatforms = new List<Platform>();
 
     void Start()
@@ -27,11 +27,9 @@ public class PlatformManager : MonoBehaviour
 
     void Update()
     {
-        // Si el jugador se acerca a la parte superior de las generadas, genera más
         if (player.position.y + (verticalSpacing * 3) > highestY)
             SpawnNext();
 
-        // Recolectar y devolver al pool las que queden muy abajo
         for (int i = activePlatforms.Count - 1; i >= 0; i--)
         {
             if (activePlatforms[i].transform.position.y + despawnBelowPlayerBy < player.position.y)
@@ -44,9 +42,9 @@ public class PlatformManager : MonoBehaviour
 
     private void SpawnNext()
     {
-        // Obtener del pool
+        
         Platform plat = pool.GetObject();
-        // Calcular posición aleatoria
+
         float x = Random.Range(-horizontalRange, horizontalRange);
         highestY += verticalSpacing;
         plat.transform.position = new Vector3(x, highestY, 0f);

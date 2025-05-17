@@ -8,23 +8,35 @@ public class GameSessionController : MonoBehaviour
     [SerializeField] private CurrentPlayerDataSO currentPlayerData;
     [SerializeField] private ScoreDatabaseSO database;
     [Header("UI de puntuación")]
-    [SerializeField] private TMP_Text scoreText;   // Arrastra aquí tu TextMeshProUGUI
+    [SerializeField] private TMP_Text scoreText;
+
+    [SerializeField] private GameObject Paneldeirmenu;
 
     private float startTime;
     private bool isGameOver = false;
-    private const float pointsPerSecond = 10f;    // Ajusta a tu gusto
+    private const float pointsPerSecond = 2f;
+
+    public void OnEnable()
+    {
+        ShipMovement.Muerte += OnPlayerDeath;
+    }
+    public void OnDisable()
+    {
+        ShipMovement.Muerte -= OnPlayerDeath;
+
+    }
 
     void Start()
     {
         startTime = Time.time;
         UpdateScoreUI(0);
+        Paneldeirmenu.SetActive(false);
     }
 
     void Update()
     {
         if (isGameOver) return;
 
-        // Calcula puntuación provisional
         float elapsed = Time.time - startTime;
         int currentScore = Mathf.FloorToInt(elapsed * pointsPerSecond);
         UpdateScoreUI(currentScore);
@@ -32,16 +44,13 @@ public class GameSessionController : MonoBehaviour
 
     private void UpdateScoreUI(int score)
     {
-        // Formatea como quieras: prefijo, sufijo, ceros…
         scoreText.text = $"Score: {score}";
     }
 
-    // Llama a este método cuando el jugador muera
     public void OnPlayerDeath()
     {
         isGameOver = true;
 
-        // Calcula el tiempo final y la puntuación
         float survivalTime = Time.time - startTime;
         currentPlayerData.survivalTime = survivalTime;
         int finalScore = Mathf.FloorToInt(survivalTime * pointsPerSecond);
@@ -49,6 +58,13 @@ public class GameSessionController : MonoBehaviour
         UpdateScoreUI(finalScore);
 
         database.AddNewScore(currentPlayerData.playerName, finalScore);
+
+        Paneldeirmenu.SetActive(true);
+
+       
+    }
+    public void IrMenu()
+    {
         SceneManager.LoadScene("Inicio");
     }
 
