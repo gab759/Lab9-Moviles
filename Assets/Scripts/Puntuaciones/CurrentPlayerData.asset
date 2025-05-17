@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58839429011f8084d8b482463a73ae86, type: 3}
-  m_Name: SceneData
+  m_Script: {fileID: 11500000, guid: 84d8cc749d63ea04989c64ccd0451bc5, type: 3}
+  m_Name: CurrentPlayerData
   m_EditorClassIdentifier: 
-  scenes:
-  - Menu
-  - Game
-  - Win
-  - Loss
-  - Charging
+  playerName: 
+  survivalTime: 0

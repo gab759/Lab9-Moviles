@@ -5,10 +5,10 @@ public class PlayerScoreSO : ScriptableObject
 {
     [Header("Datos del Jugador")]
     public string playerName;
-    public int score;
+    public float score;
 
     // (Opcional) Método para actualizar
-    public void SetScore(string name, int newScore)
+    public void SetScore(string name, float newScore)
     {
         playerName = name;
         score = newScore;

@@ -4,15 +4,35 @@ using TMPro;
 
 public class MenuController : MonoBehaviour
 {
-    [Header("Referencias UI")]
-    public GameObject panelResults;
-    public TMP_Text[] resultTexts;           // 5 textos en orden
-    [Header("Datos")]
-    public ScoreDatabaseSO database;         // Asignar el asset
+    [Header("UI de Menú")]
+    [SerializeField] private GameObject panelResults;
+    [SerializeField] private GameObject panelEnterName;
+    [SerializeField] private TMP_InputField inputNameField;
+    [SerializeField] private TMP_Text[] resultTexts;
 
-    // Llama en el botón “Jugar”
+    [Header("Datos")]
+    [SerializeField] private ScoreDatabaseSO database;
+    [SerializeField] private CurrentPlayerDataSO currentPlayerData;
+
+    private void Start()
+    {
+        panelEnterName.SetActive(false);
+    }
+    public void OnPlayClickedPanel()
+    {
+        panelEnterName.SetActive(true);
+    }
     public void OnPlayClicked()
     {
+        string name = inputNameField.text.Trim();
+        if (string.IsNullOrEmpty(name))
+        {
+            // Podrías mostrar un aviso “Introduce un nombre válido”
+            return;
+        }
+
+        currentPlayerData.playerName = name;
+
         SceneManager.LoadScene("MainGame"); // o nombre de tu escena de juego
     }
 
