@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ScoreDatabase
   m_EditorClassIdentifier: 
   topScores:
-  - {fileID: 11400000, guid: 2752450a0d39fe94c8a56532ee64d9d5, type: 2}
-  - {fileID: 11400000, guid: 61eb0412a1b3b684da34624088f2f6ea, type: 2}
-  - {fileID: 11400000, guid: 0a0dfc18d695b7943a61801e262663f8, type: 2}
-  - {fileID: 11400000, guid: bcbcc13881b32774ba7b4eb7aad40fe7, type: 2}
-  - {fileID: 11400000, guid: d7afd154fd57e2a448b24af81c3d556c, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

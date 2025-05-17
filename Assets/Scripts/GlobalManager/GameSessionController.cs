@@ -11,7 +11,7 @@ public class GameSessionController : MonoBehaviour
     [SerializeField] private TMP_Text scoreText;
 
     [SerializeField] private GameObject Paneldeirmenu;
-
+    public int finalScore;
     private float startTime;
     private bool isGameOver = false;
     private const float pointsPerSecond = 2f;
@@ -53,7 +53,7 @@ public class GameSessionController : MonoBehaviour
 
         float survivalTime = Time.time - startTime;
         currentPlayerData.survivalTime = survivalTime;
-        int finalScore = Mathf.FloorToInt(survivalTime * pointsPerSecond);
+        finalScore = Mathf.FloorToInt(survivalTime * pointsPerSecond);
 
         UpdateScoreUI(finalScore);
 
