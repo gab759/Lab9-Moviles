@@ -7,7 +7,6 @@ public class GameSessionController : MonoBehaviour
     [Header("Datos de sesión")]
     [SerializeField] private CurrentPlayerDataSO currentPlayerData;
     [SerializeField] private ScoreDatabaseSO database;
-
     [Header("UI de puntuación")]
     [SerializeField] private TMP_Text scoreText;   // Arrastra aquí tu TextMeshProUGUI
 
@@ -50,7 +49,6 @@ public class GameSessionController : MonoBehaviour
         UpdateScoreUI(finalScore);
 
         database.AddNewScore(currentPlayerData.playerName, finalScore);
-
         SceneManager.LoadScene("Inicio");
     }
 

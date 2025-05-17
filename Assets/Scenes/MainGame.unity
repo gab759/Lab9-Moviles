@@ -661,7 +661,7 @@ GameObject:
   - component: {fileID: 1146625923}
   - component: {fileID: 1146625922}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ButtonDeath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -734,6 +734,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1387804085}
         m_TargetAssemblyTypeName: GameSessionController, Assembly-CSharp
         m_MethodName: OnPlayerDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2061740332}
+        m_TargetAssemblyTypeName: DataBaseManager, Assembly-CSharp
+        m_MethodName: UploadPlayerScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1316,6 +1328,53 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &2061740331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2061740333}
+  - component: {fileID: 2061740332}
+  m_Layer: 0
+  m_Name: FireBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2061740332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061740331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad465edc86695445afe35800f96c7be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UserID: 
+  currentPlayerData: {fileID: 11400000, guid: eaf51062520f88e4893746982ea1ae95, type: 2}
+  scoreDatabase: {fileID: 11400000, guid: 5a043e463fd808c499e8d28262939a15, type: 2}
+--- !u!4 &2061740333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061740331}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 717.893, y: 1500.728, z: -26.006428}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1329,3 +1388,4 @@ SceneRoots:
   - {fileID: 1387804086}
   - {fileID: 73188312}
   - {fileID: 1435789468}
+  - {fileID: 2061740333}
