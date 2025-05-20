@@ -16,11 +16,11 @@ public class MenuController : MonoBehaviour
 
     private void Start()
     {
-        panelEnterName.SetActive(false);
+        //panelEnterName.SetActive(false);
     }
     public void OnPlayClickedPanel()
     {
-        panelEnterName.SetActive(true);
+        cambioJUGAR();
     }
     public void OnPlayClicked()
     {
@@ -33,7 +33,7 @@ public class MenuController : MonoBehaviour
 
         currentPlayerData.playerName = name;
 
-        SceneManager.LoadScene("MainGame"); // o nombre de tu escena de juego
+      //  
     }
 
     // Llama en el botón “Resultados”
@@ -41,6 +41,7 @@ public class MenuController : MonoBehaviour
     {
         panelResults.SetActive(true);
         UpdateResultsUI();
+    
     }
 
     // Actualiza cada línea con nombre y score
@@ -65,5 +66,9 @@ public class MenuController : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
+    }
+    public void cambioJUGAR()
+    {
+        SceneManager.LoadScene("MainGame"); // o nombre de tu escena de juego
     }
 }

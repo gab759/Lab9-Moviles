@@ -1,30 +1,30 @@
 {
-  "project_info": {
-    "project_number": "644249123982",
-    "firebase_url": "https://lab9-moviles-default-rtdb.firebaseio.com",
-    "project_id": "lab9-moviles",
-    "storage_bucket": "lab9-moviles.firebasestorage.app"
-  },
-  "client": [
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:644249123982:android:de0b85400f266f69681ddf",
-        "android_client_info": {
-          "package_name": "com.CordovaVega.Lab9Moviles"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
+    "project_info": {
+        "project_number": "644249123982",
+        "firebase_url": "https://lab9-moviles-default-rtdb.firebaseio.com",
+        "project_id": "lab9-moviles",
+        "storage_bucket": "lab9-moviles.firebasestorage.app"
+    },
+    "client": [
         {
-          "current_key": "AIzaSyDuANz75vTpAAl_X9W9GCKTOdcNjPYHAKI"
+            "client_info": {
+                "mobilesdk_app_id": "1:644249123982:android:de0b85400f266f69681ddf",
+                "android_client_info": {
+                    "package_name": "com.CordovaVega.Lab9Moviles"
+                }
+            },
+            "oauth_client": [],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyDuANz75vTpAAl_X9W9GCKTOdcNjPYHAKI"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": []
+                }
+            }
         }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    }
-  ],
-  "configuration_version": "1"
+    ],
+    "configuration_version": "1"
 }
