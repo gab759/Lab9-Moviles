@@ -419,6 +419,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272150690}
   m_CullTransparentMesh: 1
+--- !u!1 &322407437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 322407439}
+  - component: {fileID: 322407438}
+  m_Layer: 0
+  m_Name: Firestore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &322407438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322407437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b6cd6ebe2b48f4dba40ffb2fd3840d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentPlayerData: {fileID: 11400000, guid: eaf51062520f88e4893746982ea1ae95, type: 2}
+  scoreDatabase: {fileID: 11400000, guid: 5a043e463fd808c499e8d28262939a15, type: 2}
+--- !u!4 &322407439
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322407437}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 510.20804, y: 183.19011, z: 11.9259815}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &546260502
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,8 +1030,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2061740332}
-        m_TargetAssemblyTypeName: DataBaseManager, Assembly-CSharp
+      - m_Target: {fileID: 322407438}
+        m_TargetAssemblyTypeName: DataBaseManagerFirestore, Assembly-CSharp
         m_MethodName: UploadPlayerScore
         m_Mode: 1
         m_Arguments:
@@ -1909,7 +1955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2061740332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1917,7 +1963,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061740331}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad465edc86695445afe35800f96c7be, type: 3}
   m_Name: 
@@ -2063,3 +2109,4 @@ SceneRoots:
   - {fileID: 73188312}
   - {fileID: 1435789468}
   - {fileID: 2061740333}
+  - {fileID: 322407439}
